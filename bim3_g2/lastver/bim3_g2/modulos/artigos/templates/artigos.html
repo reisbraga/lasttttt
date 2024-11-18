@@ -1,0 +1,27 @@
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div>
+        <a href="/artigos/add">Adicionar</a>
+    </div>
+    <table>
+        <tr>
+            <th>Título do artigo</th>
+            <th>Ano de publicação</th>
+            <th>Autor</th>
+        </tr>
+        {% for ar in artigos%}
+        <tr>
+            <td>{{ar.titulo}}</td>
+            <td>{{ar.ano_publicacao}}</td>
+            <td>{{ar.autor.nome}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

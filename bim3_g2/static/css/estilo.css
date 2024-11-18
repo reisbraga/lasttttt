@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: -10;
+    margin: 0;
+    outline: 0;
+    background-color: var(--secondary);
+}
+:root {
+    --primary: #f3a1ba;
+    --secondary: #ffe5f0;
+    --alert: #ff0062;
+    --white: #fff;
+    --black: #000;
+}
+
+nav {
+
+    background: linear-gradient(rgb(61, 9, 29), rgb(243, 235, 238), rgb(78, 30, 49));
+    height: 5rem;
+    text-align: center;
+    align-items: flex-start;
+
+}
+
+.mensagem_titulo {
+    text-align: center;
+    color: var(--primary);
+}
+

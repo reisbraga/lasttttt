@@ -1,0 +1,32 @@
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    <form action="/artigos/save" method="post">
+        <div>
+            <label for="titulo">Título do artigo: </label>
+            <input type="text" name="titulo" id="titulo" required>
+        </div>
+        <div>
+            <label for="ano_publicacao">Ano de publicação: </label>
+            <input type="ano_publicacao" name="ano_publicacao" id="ano_publicacao" required>
+        </div>
+        <div>
+            <label for="autor.id_autor">Autor: </label>
+            <select name="id_autor" id="id_autor" required>
+                <option value=""></option>
+                {% for au in autores %}
+                <option value="{{au.id_autor}}">{{au.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Salvar</button>    
+    </form>
+{% endblock %}
